@@ -15,7 +15,7 @@ char display_type[100][50];
 #include "LeapCal.h"
 
 //2022 ©W_Frank/Franoz235 20213993 (o゜▽゜)o☆
-//2022-3-1 Ver1.0.0
+//2022-3-1 Ver1.0.0a
 
 int main(void) {
 	int i;
@@ -34,7 +34,7 @@ int main(void) {
 		for (i = 1; i <= homework_count; i++) {
 			printf("%d.%s\n", i, display_type[i]);
 		}
-		printf("(1-%d)", homework_count);
+		printf("(1-%d)...", homework_count);
 		scanf("%d", &choice);
 		while (1) {
 			system("cls");

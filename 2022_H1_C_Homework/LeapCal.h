@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 //2022 ©W_Frank/Franoz235 20213993 (　ﾟ∀ﾟ) ﾉ♡
-//2022-3-1 Ver1.0.0
+//2022-3-1 Ver1.0.1	修复了负数年份不正常工作的Bug
 
 int LeapCal_serial_number;
 
@@ -18,7 +18,7 @@ int LeapCal(int year) {			//平年闰年判断
 		else
 			return 0;
 	else if (year < 0)
-		if ((year % 4 == 1 && year % 100 != 1) || (year % 400 == 1 && year % 3200 != 1) || (year % 3200 == 1 && year % 172800 == 1))		//负数年份
+		if ((year % 4 == -1 && year % 100 != -1) || (year % 400 == -1 && year % 3200 != -1) || (year % 3200 == -1 && year % 172800 == -1))		//负数年份
 			return 1;
 		else
 			return 0;

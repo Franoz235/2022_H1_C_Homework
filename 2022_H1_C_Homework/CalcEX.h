@@ -67,7 +67,7 @@ int CalcEX_main(void) {		//计算器主函数
 		"I.求长方体表面积\n"
 		"J.求球表面积\n"
 		"K.返回上一目录\n"
-		"(A-K)........");
+		"(A-K)...");
 	in = getchar();
 	scanf("%c", &in);
 	switch (in) {
@@ -127,6 +127,7 @@ int CalcEX_main(void) {		//计算器主函数
 		system("cls");
 		return 0;
 	}
+	printf("\n");
 	system("pause");
 	system("cls");
 	return 0;
