@@ -26,6 +26,15 @@
     <ClInclude Include="LeapCal.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="OddCal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EasySort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md">
