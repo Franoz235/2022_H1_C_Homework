@@ -1,7 +1,5 @@
 #pragma once
 int EasySort_serial_number;
-#define RANGE_NUMBERS_MAX 10000
-int data[RANGE_NUMBERS_MAX];
 
 int EasySort_Init_Stage1() {		// 初始化并获取序列号
 	homework_count++;
@@ -10,12 +8,12 @@ int EasySort_Init_Stage1() {		// 初始化并获取序列号
 }
 
 
-int EasySort(int times) {
+int EasySort(int times,int*data) {
 
 	int temp, i, n;
 	for (n = 0; n < times; n++) {
 		for (i = 0; i < times; i++) {
-			if (data[i] > data[i + 1]) {
+			if (data[i] < data[i + 1]) {
 				temp = data[i];
 				data[i] = data[i + 1];
 				data[i + 1] = temp;
@@ -27,18 +25,22 @@ int EasySort(int times) {
 int EasySort_main() {
 	//Range
 	int i, numbers, odd;
+	int* data;
 	printf("请输入要排序的个数(输入-1退出)：");
 	scanf("%d", &numbers);
 	if (numbers == -1)		//退出判断
 		return 1;
 	else {
+		data = (int*)malloc(sizeof(int) * numbers);
 		printf("请逐个输入需要排序的数，用空格隔开:\n");
-		for (i = 0; i < numbers; i++) scanf_s("%d", &data[i]);
-		EasySort(numbers);
+		getchar();
+		for (i = 0; i < numbers; i++) 
+			scanf_s("%d", &data[i]);
+		EasySort(numbers,data);
 		while (1) {
 			printf("1.从小到大输出\n2.从大到小输出\n(1/2).....");
 			scanf("%d", &odd);
-			if (odd == 1) {
+			if (odd == 2) {
 				printf("排序的结果为:");
 				for (i = 0; i < numbers; i++)
 					printf("%d ", data[i]);
@@ -46,7 +48,7 @@ int EasySort_main() {
 				system("pause");
 				break;
 			}
-			else if (odd == 2) {
+			else if (odd == 1) {
 				printf("排序的结果为:");
 				for (i = numbers-1; i >= 0; i--)
 					printf("%d ", data[i]);
@@ -57,6 +59,7 @@ int EasySort_main() {
 			else
 				system("cls");
 		}
+		free(data);
 		return 0;
 	}
 }

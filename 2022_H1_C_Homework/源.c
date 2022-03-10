@@ -8,6 +8,7 @@
 #include "stack.h"
 
 #define Pi 3.1415926535897932
+#define STACK_MAX 10000
 int homework_count = 0, break_loop = 0, choice = 0;
 char display_type[100][50];
 
@@ -25,6 +26,7 @@ int main(void) {
 	int i;
 
 	//初始化阶段一函数调用
+	stack_init(STACK_MAX);
 	CalcEX_Init_Stage1();
 	LeapCal_Init_Stage1();
 	OddCal_Init_Stage1();
